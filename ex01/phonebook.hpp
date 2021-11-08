@@ -2,13 +2,14 @@
 #define PHONEBOOK_HPP
 
 #include "contact.hpp"
+#include <iomanip>
 
 class Phonebook {
 	private:
 		int					index;
 		int					list;
-		Contact::Contact	my_list[8];
-		void	printnumber(int);
+		Contact				my_list[8];
+		void	printall(void) const;
 	public:
 		Phonebook(void);
 		~Phonebook(void);

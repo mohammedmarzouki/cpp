@@ -2,12 +2,26 @@
 
 Contact::Contact()
 {
+	first_name = "";
+	last_name = "";
+	nickname = "";
+	phone_number = "";
+	darkest_secret = "";
 	std::cout << "Contact created\n";
 }
 
 Contact::~Contact()
 {
 	std::cout << "Contact deleted\n";
+}
+
+void		Contact::print_data(void) const {
+	
+	std::cout << "First Name : " << this->first_name << std::endl;
+	std::cout << "Last Name : " << this->last_name << std::endl;
+	std::cout << "Nickame : " << this->nickname << std::endl;
+	std::cout << "Phone Number : " << this->phone_number << std::endl;
+	std::cout << "Darkest Secret : " << this->darkest_secret << std::endl;
 }
 
 std::string	Contact::getfirst_name(void) const {
