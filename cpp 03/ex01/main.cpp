@@ -1,14 +1,18 @@
 #include "ScavTrap.hpp"
 
 int	main(void) {
-	ScavTrap	One("Sagat");
-	ScavTrap	Two("Cammy");
+	ScavTrap	a("3li");
+	ScavTrap	b("lbachir");
 
-	One.attack(Two.getName());
-	Two.takeDamage(One.getAttackDamage());
-	One.takeDamage(80);
-	One.beRepaired(60);
-	std::cout << One.getName() << " has " << One.getHitPoints()	<< " hit points " << std::endl;
-	Two.guardGate();
+	a.attack(b.getName());
+	b.takeDamage(a.getAttackDamage());
+	a.beRepaired(900);
+	b.beRepaired(874);
+	a.takeDamage(478);
+	b.takeDamage(808);
+	std::cout << a.getName() << " has " << a.getHitPoints()	<< " hit points " << std::endl;
+	std::cout << b.getName() << " has " << b.getHitPoints()	<< " hit points " << std::endl;
+	b.guardGate();
+	a.guardGate();
 	return (0);
 }

@@ -1,14 +1,18 @@
 #include "FragTrap.hpp"
 
 int	main(void) {
-	FragTrap	One("Sagat");
-	FragTrap	Two("Cammy");
+	FragTrap	a("3li");
+	FragTrap	b("lbachir");
 
-	One.attack(Two.getName());
-	Two.takeDamage(One.getAttackDamage());
-	One.takeDamage(80);
-	One.beRepaired(60);
-	std::cout << One.getName() << " has " << One.getHitPoints()	<< " hit points " << std::endl;
-	Two.highFivesGuys();
+	a.attack(b.getName());
+	b.takeDamage(a.getAttackDamage());
+	a.beRepaired(900);
+	b.beRepaired(874);
+	a.takeDamage(478);
+	b.takeDamage(808);
+	std::cout << a.getName() << " has " << a.getHitPoints()	<< " hit points " << std::endl;
+	std::cout << b.getName() << " has " << b.getHitPoints()	<< " hit points " << std::endl;
+	a.highFivesGuys();
+	b.highFivesGuys();
 	return (0);
 }

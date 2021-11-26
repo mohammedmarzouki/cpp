@@ -7,6 +7,8 @@ FragTrap::FragTrap() {
 	this->_attackDamage = 30;
 }
 
+FragTrap::FragTrap(FragTrap const& src) {std::cout << "FragTrap copy constructor has been called" << std::endl;*this = src;}
+
 FragTrap::FragTrap(std::string name) {
 	std::cout << "FragTrap name constructor called" << std::endl;
 	this->_name = name;
@@ -15,34 +17,23 @@ FragTrap::FragTrap(std::string name) {
 	this->_attackDamage = 30;
 }
 
-FragTrap::FragTrap(FragTrap const& src) {
-	std::cout << "FragTrap copy constructor called" << std::endl;
-	*this = src;
-}
+FragTrap::~FragTrap() {std::cout << "FragTrap destructor called" << std::endl;}
 
-FragTrap::~FragTrap() {
-	std::cout << "FragTrap destructor called" << std::endl;
-}
-
-FragTrap	&FragTrap::operator=(const FragTrap &rhs)
-{
-	std::cout << "FragTrap equal operator called" << std::endl;
-	this->_name = rhs._name;
-	this->_hitPoints = rhs._hitPoints;
-	this->_energyPoints = rhs._energyPoints;
-	this->_attackDamage = rhs._attackDamage;
-	return (*this);
-}
+void	FragTrap::highFivesGuys(void) {std::cout << "FragTrap " << this->_name << ": HIGH FIVE?" << std::endl;}
 
 void	FragTrap::attack(std::string const& target) {
-	if (this->_hitPoints > 0) {
+	if (this->_hitPoints > 0)
 		std::cout << "FragTrap " << this->_name << " attack " << target << ", causing " << _attackDamage << " points of damage! " << std::endl;
-		this->_hitPoints--;
-	}
 	else
 		std::cout << "No hit points left. Good luck next time." << std::endl;
 }
 
-void	FragTrap::highFivesGuys(void) {
-	std::cout << "FragTrap " << this->_name << ": HIGH FIVE?" << std::endl;
+FragTrap	&FragTrap::operator=(const FragTrap &op)
+{
+	std::cout << "FragTrap equal operator called" << std::endl;
+	this->_name = op._name;
+	this->_hitPoints = op._hitPoints;
+	this->_energyPoints = op._energyPoints;
+	this->_attackDamage = op._attackDamage;
+	return (*this);
 }

@@ -2,7 +2,7 @@
 
 ClapTrap::ClapTrap() : _hitPoints(10), _energyPoints(10), _attackDamage(0) {std::cout << "Default constructor called" << std::endl;}
 
-ClapTrap::ClapTrap(std::string name) : _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0) {std::cout << "Name constructor called" << std::endl;}
+ClapTrap::ClapTrap(std::string name) : _name(name), _hitPoints(10), _energyPoints(10), _attackDamage(0) {std::cout << "ClapTrap Name constructor called" << std::endl;}
 
 ClapTrap::ClapTrap(ClapTrap const& src) {std::cout << "Copy constructor called" << std::endl;*this = src;}
 
@@ -41,5 +41,5 @@ void	ClapTrap::attack(std::string const& target) {
 	if (this->_hitPoints > 0)
 		std::cout << this->_name << " attacked " << target << ", causing " << _attackDamage << " points of damage! " << std::endl;
 	else
-		std::cout << "You are Dead" << std::endl;
+		std::cout << this->_name << " is Dead" << std::endl;
 }

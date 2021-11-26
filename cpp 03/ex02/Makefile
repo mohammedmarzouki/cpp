@@ -8,7 +8,7 @@ ${NAME}: ${SRCS}
 	clang++ -std=c++98 -Wall -Wextra -Werror ${SRCS} -o ${NAME}
 
 clean:
-	@echo "nothing to be cleaned"
+	@echo "all cleaned"
 
 fclean: clean
 	@rm -f ${NAME}
